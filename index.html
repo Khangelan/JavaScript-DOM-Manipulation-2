@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Dynamic Profile Card</title>
+</head>
+<body>
+    <div id="profileCard">
+        <img id="profileImage" src="https://lansa.com/wp-content/uploads/2022/09/Software-Development-Estimation-A-Quick-Guide-scaled.jpg" alt="Software Developer" width="200px" height= "200px">
+        <h2 id="profileName">John Doe</h2>
+        <p id="profileRole">Passionate about coding and learning new technologies. </p>
+        <button id="updateNameBtn">Update Name</button>
+        <button id="updateRoleBtn">Update Role</button>
+        <button id="toggleStatusBtn">Toggle Active Status</button>
+        <button id="changeImageBtn">Change image</button>
+    </div>
+    <script>
+        document.getElementById("updateNameBtn").addEventListener("click", function(){
+            const ProfnewName = prompt("Insert a new Name");
+            if(ProfnewName){
+                document.getElementById("profileName").textContent = ProfnewName
+            }
+        });
+        document.getElementById("updateRoleBtn").addEventListener("click", function(){
+            const newRole = prompt("Insert a new Name");
+            if(newRole){
+                document.getElementById("profileRole").textContent = newRole
+            }
+        });
+        
+        document.getElementById("toggleStatusBtn").addEventListener("click",function(){
+            document.getElementById("profileCard").classList.toggle("active-status");
+
+        });
+        document.getElementById("changeImageBtn").addEventListener("click", function() {
+            const newImageUrl = prompt("Enter new image URL:");
+            if (newImageUrl) {
+            document.getElementById("profileImage").src = newImageUrl;
+    }
+    });
+    </script>
+</body>
+</html>
